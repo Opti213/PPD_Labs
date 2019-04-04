@@ -2,6 +2,7 @@ package com.example.opti.lab_01;
 
 import android.graphics.Color;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,14 +18,14 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     private ArrayList<Item> items;
 
     //constructor
-    public ItemAdapter(ArrayList<Item> items){
+    public ItemAdapter(ArrayList<Item> items) {
         this.items = items;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_layout, viewGroup,false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_layout, viewGroup, false);
         return new ViewHolder(view);
     }
 
@@ -38,7 +39,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         return items.size();
     }
 
-    public void bind(Item item){
+    public void bind(Item item) {
 
     }
 
@@ -52,34 +53,37 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         notifyDataSetChanged();
     }
 
-    public void addItem(ArrayList<Item> items){
+    public void addItem(ArrayList<Item> items) {
         this.items.addAll(items);
         notifyDataSetChanged();
     }
 
-    public void clearItems(){
+    public void clearItems() {
         items.clear();
         notifyDataSetChanged();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
         //init obj
+        private ConstraintLayout cLayout;
         private TextView textView;
         private ImageView imageView;
 
-        public ViewHolder (View view){
+        public ViewHolder(View view) {
             super(view);
             textView = (TextView) view.findViewById(R.id.textView);
-            imageView= (ImageView)view.findViewById(R.id.imageView);
+            imageView = (ImageView) view.findViewById(R.id.imageView);
+            cLayout = (ConstraintLayout) view.findViewById(R.id.cLayout);
         }
 
-        public void bind(Item item){
+        public void bind(Item item) {
             textView.setText(item.str);
             imageView.setImageResource(item.img);
+            cLayout.setBackgroundColor(item.color);
         }
 
-        public void bindBackground(int color){
-            textView.setBackgroundColor(color);
+        public void bindBackground(int color) {
+            cLayout.setBackgroundColor(color);
         }
     }
 

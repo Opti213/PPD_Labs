@@ -78,6 +78,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
         public void bind(Item item) {
             textView.setText(item.str);
+            textView.setTextColor(Color.BLACK);
             imageView.setImageResource(item.img);
             cLayout.setBackgroundColor(item.color);
         }

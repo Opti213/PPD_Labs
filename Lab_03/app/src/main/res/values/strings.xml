@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Lab_03</string>
+    <string name="HelloMessage">Welcome to the 3rd lab</string>
+    <string name="toInfo">To info</string>
+    <string name="addStudent">Add Student</string>
+    <string name="changeLast">Change Last</string>
+</resources>

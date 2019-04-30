@@ -37,4 +37,9 @@
         android:background="@color/colorAccent"
         android:layout_height="wrap_content"
         android:text="@string/changeLast" />
+
+    <ListView
+        android:id="@+id/checkView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>

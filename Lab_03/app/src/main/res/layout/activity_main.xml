@@ -5,11 +5,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@color/colorMain"
+    android:background="@color/blue"
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView"
         android:textSize="30sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,28 +18,24 @@
         android:text="@string/HelloMessage" />
 
     <Button
-        android:id="@+id/button"
-        android:background="@color/colorAccent"
+        android:id="@+id/bInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/blueDark"
         android:text="@string/toInfo" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/bAdd"
         android:layout_width="match_parent"
-        android:background="@color/colorPrimary"
+        android:background="@color/blue"
         android:layout_height="wrap_content"
         android:text="@string/addStudent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/bChange"
         android:layout_width="match_parent"
-        android:background="@color/colorAccent"
+        android:background="@color/blueDark"
         android:layout_height="wrap_content"
         android:text="@string/changeLast" />
 
-    <ListView
-        android:id="@+id/checkView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 </LinearLayout>

@@ -4,50 +4,30 @@ import android.arch.persistence.room.Room;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
-import android.widget.ListView;
-
-import com.example.lab_03.DataBases.AppDatabase;
-import com.example.lab_03.Interfaces.StudentDao;
-import com.example.lab_03.Types.Student;
-
-import java.util.ArrayList;
+import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    private ListView listView;
+
+    private Button bInfo;
+    private Button bAdd;
+    private Button bChange;
+    private TextView text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getWindow().setStatusBarColor(Color.BLUE);
 
-        getWindow().setStatusBarColor(Color.RED);
+        bInfo = findViewById(R.id.bInfo);
+        bAdd = findViewById(R.id.bAdd);
+        bChange = findViewById(R.id.bChange);
+        text = findViewById(R.id.textView);
 
-        //db connection
-        AppDatabase db =  Room.databaseBuilder(this, AppDatabase.class, "StudentsDB").allowMainThreadQueries().build();
+        AppDatabase db;
+        db = App.getInstance().getDatabase();
         StudentDao dao = db.studentDao();
 
-        //test db
-        //addTestStudents(5, dao);  //todo
-        //ArrayList<Student> arr = (ArrayList<Student>) dao.getAll();
-        //ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, studentToString(arr));
-        //listView = findViewById(R.id.checkView);
-        //listView.setAdapter(itemsAdapter);
-    }
-
-    void addTestStudents(int count, StudentDao dao){
-        for (int i=0; i < count;i++){
-            dao.insert(new Student(i,"testStudent", "now"));
-        }
-    }
-
-    ArrayList<String> studentToString(ArrayList<Student> students){
-        ArrayList<String> res = null;
-        for (Student student : students){
-            res.add(student.toString());
-        }
-        return res;
     }
 }

@@ -1,4 +1,4 @@
-package com.example.lab_03;
+package com.redbox.database;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.lab_03", appContext.getPackageName());
+        assertEquals("com.redbox.database", appContext.getPackageName());
     }
 }

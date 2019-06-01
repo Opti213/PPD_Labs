@@ -1,4 +1,4 @@
-package com.example.lab_03;
+package com.redbox.database;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -10,25 +10,27 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHolder> {
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
     private Context mContext;
-    private List<Student> list;
+    private List<App.Student> list;
 
-    public StudentAdapter() {
+    public RecyclerViewAdapter() {
     }
 
-    public StudentAdapter(Context context, List<Student> list) {
+    public RecyclerViewAdapter(Context context, List<App.Student> list) {
         this.mContext = context;
         this.list = list;
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView studentInfo;
+        TextView nameTextView;
+        TextView timeTextView;
 
         ViewHolder(View view) {
             super(view);
-            studentInfo = view.findViewById(R.id.studentText);
+            nameTextView = view.findViewById(R.id.name);
+            timeTextView = view.findViewById(R.id.timeStamp);
         }
     }
 
@@ -40,13 +42,15 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.student_item, viewGroup, false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.list_item, viewGroup, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        Student student = list.get(i);
-        viewHolder.studentInfo.setText(student.toString());
+        App.Student student = list.get(i);
+        viewHolder.nameTextView.setText(student.id + " " + student.credentials);
+        viewHolder.timeTextView.setText(student.timestamp);
+
     }
 }

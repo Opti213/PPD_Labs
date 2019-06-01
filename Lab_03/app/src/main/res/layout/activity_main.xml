@@ -1,41 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     android:orientation="vertical"
-    android:gravity="center"
-    android:background="@color/blue"
     tools:context=".MainActivity">
 
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="199dp"
+        android:layout_weight="1" />
+
     <TextView
-        android:id="@+id/textView"
-        android:textSize="30sp"
+        android:id="@+id/userCountTextView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="20dp"
-        android:gravity="center"
-        android:text="@string/HelloMessage" />
+        android:layout_height="156dp"
+        android:layout_weight="1"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="30sp" />
 
     <Button
-        android:id="@+id/bInfo"
+        android:id="@+id/infoButton"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/blueDark"
-        android:text="@string/toInfo" />
+        android:layout_marginStart="@dimen/dimen_60dp"
+        android:layout_marginTop="@dimen/dimen_15dp"
+        android:layout_marginEnd="@dimen/dimen_60dp"
+        android:layout_weight="1"
+        android:background="@drawable/button_background"
+        android:elevation="@dimen/dimen_15dp"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:text="Get info about the database"
+        android:textColor="#FFFFFF" />
 
     <Button
-        android:id="@+id/bAdd"
+        android:id="@+id/addButton"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="match_parent"
-        android:background="@color/blue"
         android:layout_height="wrap_content"
-        android:text="@string/addStudent" />
+        android:layout_marginStart="@dimen/dimen_60dp"
+        android:layout_marginTop="@dimen/dimen_15dp"
+        android:layout_marginEnd="@dimen/dimen_60dp"
+        android:layout_weight="1"
+        android:background="@drawable/button_background"
+        android:elevation="@dimen/dimen_15dp"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:text="Add another entry"
+        android:textColor="#FFFFFF" />
 
     <Button
-        android:id="@+id/bChange"
+        android:id="@+id/changeButton"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="match_parent"
-        android:background="@color/blueDark"
         android:layout_height="wrap_content"
-        android:text="@string/changeLast" />
-
+        android:layout_marginStart="@dimen/dimen_60dp"
+        android:layout_marginTop="@dimen/dimen_15dp"
+        android:layout_marginBottom="@dimen/dimen_15dp"
+        android:layout_marginEnd="@dimen/dimen_60dp"
+        android:layout_weight="1"
+        android:background="@drawable/button_background"
+        android:elevation="@dimen/dimen_15dp"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:text="Change credentials"
+        android:textColor="#FFFFFF" />
 </LinearLayout>

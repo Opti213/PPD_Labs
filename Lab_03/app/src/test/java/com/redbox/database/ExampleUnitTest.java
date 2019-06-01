@@ -1,4 +1,4 @@
-package com.example.lab_03;
+package com.redbox.database;
 
 import org.junit.Test;
 
